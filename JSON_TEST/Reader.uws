@@ -1,0 +1,21 @@
+' Define the file path to the JSON file
+jsonFilePath = "C:\Users\T480S003\Desktop\JSON_TEST\response.json"
+
+' Open the JSON file for reading
+fileHandle = FOpen(jsonFilePath, "r")
+
+' Read the entire contents of the file
+jsonContent = ""
+While True
+    line = FReadLn(fileHandle)
+    If line == "" Then
+        ExitLoop
+    EndIf
+    jsonContent = jsonContent & line
+Wend
+
+' Close the file handle
+FClose(fileHandle)
+
+' Display the JSON content
+MsgBox(jsonContent)
